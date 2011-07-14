@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Depot</title>
-  <%= stylesheet_link_tag :all %>
+  <title>Tevela Store</title>
+  <%= stylesheet_link_tag "scaffold" %>
+  <%= stylesheet_link_tag "depot", :media => "all" %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 </head>
-<body>
-
-<%= yield %>
-
+<body id = "store">
+	<div id = "banner">
+		<%= image_tag("rails.png")%>
+		<div id= "store_name"><%= @page_title || "Tevela Store" %>
+		</div>
+	</div>
+	<div id = "columns">
+		<div id = "side">
+			<a href="http://www....">Home</a><br />
+			<a href="http://www....">Questions</a><br />
+			<a href="http://www....">News</a><br />
+			<a href="http://www....">Contact</a><br />
+			<a href="http://www....">About Us</a><br />
+			<a href="http://www....">Feeling Lucky?</a><br />
+			<a><div id="time"><%= Time.now.strftime("%Y-%m-%d")%>
+			</div></a><br />
+		</div>
+		<div id="main">
+			<%= yield %>
+		</div>
+	</div>
 </body>
 </html>
